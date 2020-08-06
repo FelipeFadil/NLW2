@@ -64,16 +64,11 @@
                         <label for="subject">Subject</label>
                         <select name="subject" id="subject" required>
                             <option value="">Select an option</option>
-                            <option value="1">Arts</option>
-                            <option value="2">Biology</option>
-                            <option value="3">Science</option>
-                            <option value="4">Physical education</option>
-                            <option value="5">Physics</option>
-                            <option value="6">Geography</option>
-                            <option value="7">History</option>
-                            <option value="8">Math</option>
-                            <option value="9">Portuguese</option>
-                            <option value="10">Chemistry</option>
+                            {%for subject in subjects %}
+                                <option value="{{loop.index}}">
+                                    {{subject}}
+                                </option>
+                            {%endfor%}
                         </select>
                     </div>
 
@@ -93,13 +88,11 @@
                             <label for="weekday">Weekday</label>
                             <select name="weekday[]" required>
                                 <option value="">Select an option</option>
-                                <option value="0">Sunday</option>
-                                <option value="1">Monday</option>
-                                <option value="2">Tueday</option>
-                                <option value="3">Wednesday</option>
-                                <option value="4">Thursday</option>
-                                <option value="5">Friday</option>
-                                <option value="6">Saturday</option>
+                                {%for weekday in weekdays %}
+                                    <option value="{{loop.index0}}">
+                                        {{weekday}}
+                                    </option>
+                                {%endfor%}
                             </select>
                         </div>
 
